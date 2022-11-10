@@ -16,7 +16,17 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+)
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -179,9 +189,9 @@ class AppGatewaysServiceAsyncClient:
     def __init__(
         self,
         *,
-        credentials: ga_credentials.Credentials = None,
+        credentials: Optional[ga_credentials.Credentials] = None,
         transport: Union[str, AppGatewaysServiceTransport] = "grpc_asyncio",
-        client_options: ClientOptions = None,
+        client_options: Optional[ClientOptions] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiates the app gateways service client.
@@ -225,11 +235,13 @@ class AppGatewaysServiceAsyncClient:
 
     async def list_app_gateways(
         self,
-        request: Union[app_gateways_service.ListAppGatewaysRequest, dict] = None,
+        request: Optional[
+            Union[app_gateways_service.ListAppGatewaysRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListAppGatewaysAsyncPager:
         r"""Lists AppGateways in a given project and location.
@@ -262,7 +274,7 @@ class AppGatewaysServiceAsyncClient:
                     print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appgateways_v1.types.ListAppGatewaysRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appgateways_v1.types.ListAppGatewaysRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.ListAppGateways.
             parent (:class:`str`):
@@ -341,11 +353,13 @@ class AppGatewaysServiceAsyncClient:
 
     async def get_app_gateway(
         self,
-        request: Union[app_gateways_service.GetAppGatewayRequest, dict] = None,
+        request: Optional[
+            Union[app_gateways_service.GetAppGatewayRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> app_gateways_service.AppGateway:
         r"""Gets details of a single AppGateway.
@@ -377,7 +391,7 @@ class AppGatewaysServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appgateways_v1.types.GetAppGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appgateways_v1.types.GetAppGatewayRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.GetAppGateway.
             name (:class:`str`):
@@ -449,13 +463,15 @@ class AppGatewaysServiceAsyncClient:
 
     async def create_app_gateway(
         self,
-        request: Union[app_gateways_service.CreateAppGatewayRequest, dict] = None,
+        request: Optional[
+            Union[app_gateways_service.CreateAppGatewayRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        app_gateway: app_gateways_service.AppGateway = None,
-        app_gateway_id: str = None,
+        parent: Optional[str] = None,
+        app_gateway: Optional[app_gateways_service.AppGateway] = None,
+        app_gateway_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Creates a new AppGateway in a given project and
@@ -498,7 +514,7 @@ class AppGatewaysServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appgateways_v1.types.CreateAppGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appgateways_v1.types.CreateAppGatewayRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.CreateAppGateway.
             parent (:class:`str`):
@@ -600,11 +616,13 @@ class AppGatewaysServiceAsyncClient:
 
     async def delete_app_gateway(
         self,
-        request: Union[app_gateways_service.DeleteAppGatewayRequest, dict] = None,
+        request: Optional[
+            Union[app_gateways_service.DeleteAppGatewayRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation_async.AsyncOperation:
         r"""Deletes a single AppGateway.
@@ -640,7 +658,7 @@ class AppGatewaysServiceAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.beyondcorp_appgateways_v1.types.DeleteAppGatewayRequest, dict]):
+            request (Optional[Union[google.cloud.beyondcorp_appgateways_v1.types.DeleteAppGatewayRequest, dict]]):
                 The request object. Request message for
                 BeyondCorp.DeleteAppGateway.
             name (:class:`str`):
@@ -724,10 +742,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def list_operations(
         self,
-        request: operations_pb2.ListOperationsRequest = None,
+        request: Optional[operations_pb2.ListOperationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.ListOperationsResponse:
         r"""Lists operations that match the specified filter in the request.
@@ -778,10 +796,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def get_operation(
         self,
-        request: operations_pb2.GetOperationRequest = None,
+        request: Optional[operations_pb2.GetOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operations_pb2.Operation:
         r"""Gets the latest state of a long-running operation.
@@ -832,10 +850,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def delete_operation(
         self,
-        request: operations_pb2.DeleteOperationRequest = None,
+        request: Optional[operations_pb2.DeleteOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Deletes a long-running operation.
@@ -887,10 +905,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def cancel_operation(
         self,
-        request: operations_pb2.CancelOperationRequest = None,
+        request: Optional[operations_pb2.CancelOperationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Starts asynchronous cancellation on a long-running operation.
@@ -941,10 +959,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def set_iam_policy(
         self,
-        request: iam_policy_pb2.SetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.SetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Sets the IAM access control policy on the specified function.
@@ -1061,10 +1079,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def get_iam_policy(
         self,
-        request: iam_policy_pb2.GetIamPolicyRequest = None,
+        request: Optional[iam_policy_pb2.GetIamPolicyRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> policy_pb2.Policy:
         r"""Gets the IAM access control policy for a function.
@@ -1182,10 +1200,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def test_iam_permissions(
         self,
-        request: iam_policy_pb2.TestIamPermissionsRequest = None,
+        request: Optional[iam_policy_pb2.TestIamPermissionsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> iam_policy_pb2.TestIamPermissionsResponse:
         r"""Tests the specified IAM permissions against the IAM access control
@@ -1241,10 +1259,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def get_location(
         self,
-        request: locations_pb2.GetLocationRequest = None,
+        request: Optional[locations_pb2.GetLocationRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.Location:
         r"""Gets information about a location.
@@ -1295,10 +1313,10 @@ class AppGatewaysServiceAsyncClient:
 
     async def list_locations(
         self,
-        request: locations_pb2.ListLocationsRequest = None,
+        request: Optional[locations_pb2.ListLocationsRequest] = None,
         *,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> locations_pb2.ListLocationsResponse:
         r"""Lists information about the supported locations for this service.
