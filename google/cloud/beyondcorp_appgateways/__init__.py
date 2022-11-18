@@ -18,30 +18,19 @@ from google.cloud.beyondcorp_appgateways import gapic_version as package_version
 __version__ = package_version.__version__
 
 
-from google.cloud.beyondcorp_appgateways_v1.services.app_gateways_service.client import (
-    AppGatewaysServiceClient,
-)
 from google.cloud.beyondcorp_appgateways_v1.services.app_gateways_service.async_client import (
     AppGatewaysServiceAsyncClient,
 )
-
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import AppGateway
+from google.cloud.beyondcorp_appgateways_v1.services.app_gateways_service.client import (
+    AppGatewaysServiceClient,
+)
 from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
+    AppGateway,
     AppGatewayOperationMetadata,
-)
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
     CreateAppGatewayRequest,
-)
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
     DeleteAppGatewayRequest,
-)
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
     GetAppGatewayRequest,
-)
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
     ListAppGatewaysRequest,
-)
-from google.cloud.beyondcorp_appgateways_v1.types.app_gateways_service import (
     ListAppGatewaysResponse,
 )
 
